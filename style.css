@@ -1,5 +1,9 @@
 :root {
     --font-color: #242124;
+    --font-calc: 'Calculator',
+        sans-serif;
+    --font-lcd: 'Scientific Calculator LCD',
+        sans-serif;
 }
 
 * {
@@ -37,10 +41,11 @@ body {
     height: inherit;
     border: none;
     outline: none;
-    font-size: 3rem;
+    font-size: 2rem;
     direction: rtl;
     padding-inline: .25rem;
     color: var(--font-color);
+    font-family: var(--font-lcd);
 }
 
 .button-row button {
@@ -56,8 +61,13 @@ body {
     font-weight: bolder;
     text-transform: uppercase;
     color: var(--font-color);
+    font-family: var(--font-calc);
 }
 
 .colored-action {
-    background-color: #ffa500;
+    background-color: #ffb900;
+}
+
+.colored-action:hover {
+    background-color: #ffa000;
 }
