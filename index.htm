@@ -14,12 +14,12 @@
 <body>
     <section class="container flexbox">
         <div class="calculator flexbox">
-            <div class="calculator__top">
-                <input type="text" id="calculator-display" placeholder="0">
+            <header class="calculator__top">
+                <input type="text" id="calculator-display" placeholder="0" disabled>
                 <span id="operator">+</span>
-            </div>
+            </header>
 
-            <div class="calculator__bottom">
+            <footer class="calculator__bottom">
                 <section class="button-row flexbox">
                     <button type="button" id="power">
                         <span>on</span>
@@ -30,7 +30,7 @@
                     <button type="button" id="square-root">
                         <span>&#8730;</span>
                     </button>
-                    <button class="colored-action" id="divide">
+                    <button type="button" class="colored-action" id="divide">
                         <span>&divide;</span>
                     </button>
                 </section>
@@ -45,7 +45,7 @@
                     <button type="button" value="9">
                         <span>9</span>
                     </button>
-                    <button class="colored-action" id="times">
+                    <button type="button" class="colored-action" id="times">
                         <span>&times;</span>
                     </button>
                 </section>
@@ -60,7 +60,7 @@
                     <button type="button" value="6">
                         <span>6</span>
                     </button>
-                    <button class="colored-action" id="subtract">
+                    <button type="button" class="colored-action" id="subtract">
                         <span>-</span>
                     </button>
                 </section>
@@ -75,7 +75,7 @@
                     <button type="button" value="3">
                         <span>3</span>
                     </button>
-                    <button class="colored-action" id="add">
+                    <button type="button" class="colored-action" id="add">
                         <span>+</span>
                     </button>
                 </section>
@@ -90,11 +90,11 @@
                     <button type="button" id="backspace">
                         <span>del</span>
                     </button>
-                    <button class="colored-action" id="equal-to">
+                    <button type="button" class="colored-action" id="equal-to">
                         <span>=</span>
                     </button>
                 </section>
-            </div>
+            </footer>
         </div>
     </section>
 </body>
