@@ -19,7 +19,7 @@ body {
   gap: 0.625rem;
   min-height: 100vh;
   grid-template-columns: repeat(4, 6.25rem);
-  grid-template-rows: minmax(7.5rem, auto) repeat(6, 6.25rem);
+  grid-template-rows: minmax(7.5rem, auto) repeat(5, 6.25rem);
 }
 
 .calculator-container > button {
@@ -44,7 +44,6 @@ body {
   justify-content: space-around;
   padding: 0.625rem;
   border-radius: 0.9rem;
-  /* border-top-right-radius: 0.9rem; */
   word-wrap: break-word;
   word-break: break-all;
 }
@@ -59,6 +58,11 @@ body {
   font-size: 2.5rem;
 }
 
-.span-two {
-  grid-column: span 2;
+.disabled-buttons {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.disabled-display {
+  opacity: 0.7;
 }
