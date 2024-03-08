@@ -45,6 +45,18 @@ class Calculator {
   }
 
   chooseOperation(operation) {
+    // if (this.currOperand === "") return;
+    // if (this.prevOperand !== "") {
+    //   this.compute();
+    // }
+    // this.operation = operation;
+    // this.prevOperand = this.currOperand;
+    // this.currOperand = "";
+    if (this.currOperand === "" && operation !== "-") return;
+    if (this.currOperand === "" && operation === "-") {
+      this.appendNumber(operation);
+      return;
+    }
     if (this.currOperand === "") return;
     if (this.prevOperand !== "") {
       this.compute();
