@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>07-03-2024: Classwork</title>
-    <link href="https://fonts.cdnfonts.com/css/calculator" rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/scientific-calculator-lcd" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/calculator" rel="stylesheet" />
+    <link href="https://fonts.cdnfonts.com/css/scientific-calculator-lcd" rel="stylesheet" />
     <script src="./script.js" defer></script>
 </head>
 
@@ -15,14 +15,14 @@
     <section class="container flexbox">
         <div class="calculator flexbox">
             <header class="calculator__top">
-                <input type="text" id="calculator-display" placeholder="0" disabled>
+                <input type="text" id="calculator-display" placeholder="0" readonly maxlength="9" />
                 <span id="operator">+</span>
             </header>
 
             <footer class="calculator__bottom">
                 <section class="button-row flexbox">
                     <button type="button" id="power">
-                        <span>on</span>
+                        <span>off</span>
                     </button>
                     <button type="button" id="all-clear">
                         <span>ac</span>
