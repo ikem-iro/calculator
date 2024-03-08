@@ -90,6 +90,7 @@ class Calculator {
     this.currOperand = answer;
     this.operation = undefined;
     this.prevOperand = "";
+    this.computationCompleted = true;
   }
 
   getDisplayNumber(number) {
