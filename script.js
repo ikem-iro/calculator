@@ -35,7 +35,6 @@ class Calculator {
 
   appendNumber(number) {
     if (number === "." && this.currOperand.includes(".")) return;
-    // this.currOperand = this.currOperand.toString() + number.toString();
     if (this.computationCompleted) {
       this.currOperand = number.toString();
       this.computationCompleted = false;
@@ -45,13 +44,6 @@ class Calculator {
   }
 
   chooseOperation(operation) {
-    // if (this.currOperand === "") return;
-    // if (this.prevOperand !== "") {
-    //   this.compute();
-    // }
-    // this.operation = operation;
-    // this.prevOperand = this.currOperand;
-    // this.currOperand = "";
     if (this.currOperand === "" && operation !== "-") return;
     if (this.currOperand === "" && operation === "-") {
       this.appendNumber(operation);
