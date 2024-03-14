@@ -1,3 +1,25 @@
+const numberButtons = document.querySelectorAll("[data-number]");
+
+const operationButtons = document.querySelectorAll("[data-operation]");
+
+const equalsButton = document.querySelector("[data-equals]");
+
+const deleteButton = document.querySelector("[data-delete]");
+
+const allClearButton = document.querySelector("[data-all-clear]");
+
+const onOffButton = document.querySelector("[data-off-on]");
+
+const squareRootButton = document.querySelector("[data-square-root]");
+
+const prevOperationTextElement = document.querySelector(
+  "[data-prev-operation]"
+);
+
+const currOperationTextElement = document.querySelector(
+  "[data-curr-operation]"
+);
+
 class Calculator {
   constructor(prevOperationTextElement, currOperationTextElement) {
     this.prevOperationTextElement = prevOperationTextElement;
@@ -31,33 +53,33 @@ class Calculator {
 
   delete() {
     this.currOperand = this.currOperand.toString().slice(0, -1);
+    if (this.currOperand === "") {
+      this.currOperand = this.prevOperand;
+      this.prevOperand = "";
+      this.operation = undefined;
+    }
   }
 
   appendNumber(number) {
     if (number === "." && this.currOperand.includes(".")) return;
-    // this.currOperand = this.currOperand.toString() + number.toString();
     if (this.computationCompleted) {
       this.currOperand = number.toString();
       this.computationCompleted = false;
     } else {
       this.currOperand = this.currOperand.toString() + number.toString();
+      if (this.prevOperand == "") {
+        this.compute();
+      }
     }
   }
 
   chooseOperation(operation) {
-    // if (this.currOperand === "") return;
-    // if (this.prevOperand !== "") {
-    //   this.compute();
-    // }
-    // this.operation = operation;
-    // this.prevOperand = this.currOperand;
-    // this.currOperand = "";
-    if (this.currOperand === "" && operation !== "-") return;
-    if (this.currOperand === "" && operation === "-") {
+    if (this.currOperand === "" && !operation === "-") return;
+    if (this.currOperand === "" && operation === "-"){
       this.appendNumber(operation);
-      return;
+      return
     }
-    if (this.currOperand === "") return;
+
     if (this.prevOperand !== "") {
       this.compute();
     }
@@ -68,7 +90,7 @@ class Calculator {
 
   compute() {
     let computation;
-    const prev = parseFloat(this.prevOperand);
+    const prev = parseFloat(this.prevOperand) || 0;
     const curr = parseFloat(this.currOperand);
 
     if (isNaN(prev) || isNaN(curr)) return;
@@ -83,10 +105,10 @@ class Calculator {
         computation = prev * curr;
         break;
       case "÷":
-        computation = prev / curr;
+        putation = prev / curr;
         break;
       default:
-        break;
+        return;
     }
     this.currOperand = computation;
     this.operation = undefined;
@@ -135,28 +157,6 @@ class Calculator {
     }
   }
 }
-
-const numberButtons = document.querySelectorAll("[data-number]");
-
-const operationButtons = document.querySelectorAll("[data-operation]");
-
-const equalsButton = document.querySelector("[data-equals]");
-
-const deleteButton = document.querySelector("[data-delete]");
-
-const allClearButton = document.querySelector("[data-all-clear]");
-
-const onOffButton = document.querySelector("[data-off-on]");
-
-const squareRootButton = document.querySelector("[data-square-root]");
-
-const prevOperationTextElement = document.querySelector(
-  "[data-prev-operation]"
-);
-
-const currOperationTextElement = document.querySelector(
-  "[data-curr-operation]"
-);
 
 const calculator = new Calculator(
   prevOperationTextElement,
