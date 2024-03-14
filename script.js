@@ -77,9 +77,8 @@ class Calculator {
     if (this.currOperand === "" && !operation === "-") return;
     if (this.currOperand === "" && operation === "-"){
       this.appendNumber(operation);
-      return
+        return;
     }
-
     if (this.prevOperand !== "") {
       this.compute();
     }
