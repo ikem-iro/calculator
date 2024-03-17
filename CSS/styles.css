@@ -19,11 +19,11 @@ body {
   gap: 0.625rem;
   min-height: 100vh;
   grid-template-columns: repeat(4, 6.25rem);
-  grid-template-rows: minmax(7.5rem, auto) repeat(5, 6.25rem);
+  grid-template-rows: minmax(5.5rem, auto) repeat(5, 6.25rem);
 }
 
 .calculator-container > button {
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   border: 1px solid white;
   outline: none;
@@ -46,16 +46,17 @@ body {
   border-radius: 0.9rem;
   word-wrap: break-word;
   word-break: break-all;
+  margin-bottom: 0.1rem;
 }
 
 .display-output .prev-operation {
   color: rgba(255, 255, 255, 0.75);
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .display-output .curr-operation {
   color: white;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .disabled-buttons {
@@ -65,4 +66,12 @@ body {
 
 .disabled-display {
   opacity: 0.7;
+}
+
+@media screen and (max-width: 500px) {
+
+  .calculator-container {
+  grid-template-columns: repeat(4, 20%);
+  grid-template-rows: minmax(5.5rem, auto) repeat(5, 10%);
+  }
 }
