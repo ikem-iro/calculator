@@ -104,7 +104,7 @@ class Calculator {
         computation = prev * curr;
         break;
       case "÷":
-        putation = prev / curr;
+        computation = prev / curr;
         break;
       default:
         return;
