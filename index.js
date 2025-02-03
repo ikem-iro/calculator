@@ -96,7 +96,7 @@ function compute() {
       computation = prev * curr;
       break;
     case "÷":
-      computation = prev / curr;
+      computation = curr === 0 ? "undefined" : prev / curr;
       break;
     default:
       return;
@@ -119,6 +119,7 @@ function getSquareRoot() {
 }
 
 function getDisplayNumber(number) {
+  if(number === "undefined") return "Math Error";
   const stringNumber = number.toString();
   const intDigits = parseFloat(stringNumber.split(".")[0]);
   const decimalDigits = stringNumber.split(".")[1];

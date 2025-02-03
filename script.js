@@ -104,7 +104,7 @@ class Calculator {
         computation = prev * curr;
         break;
       case "÷":
-        computation = prev / curr;
+        computation = curr === 0 ? "undefined" : prev / curr;
         break;
       default:
         return;
@@ -127,6 +127,7 @@ class Calculator {
   }
 
   getDisplayNumber(number) {
+    if(number === "undefined") return "Math Error";
     const stringNumber = number.toString();
     const intDigits = parseFloat(stringNumber.split(".")[0]);
     const decimalDigits = stringNumber.split(".")[1];
@@ -177,22 +178,22 @@ operationButtons.forEach((button) => {
   });
 });
 
-equalsButton.addEventListener("click", (button) => {
+equalsButton.addEventListener("click", () => {
   calculator.compute();
   calculator.updateDisplay();
 });
 
-allClearButton.addEventListener("click", (button) => {
+allClearButton.addEventListener("click", () => {
   calculator.clear();
   calculator.updateDisplay();
 });
 
-deleteButton.addEventListener("click", (button) => {
+deleteButton.addEventListener("click", () => {
   calculator.delete();
   calculator.updateDisplay();
 });
 
-squareRootButton.addEventListener("click", (button) => {
+squareRootButton.addEventListener("click", () => {
   calculator.getSquareRoot();
   calculator.updateDisplay();
 });
